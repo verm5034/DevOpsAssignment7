@@ -4,7 +4,7 @@ pipeline {
   {
     stage('Linting')    
     {
-    flake8 ("/app/site.py"  "/app/requiremnts.txt")
+    flake8 ("/app/site.py" , "/app/requiremnts.txt")
     }
 
   }
