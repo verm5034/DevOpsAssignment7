@@ -2,10 +2,10 @@ pipeline {
       agent { label 'linux' }
   stages 
   {
-    stage('Linting')    
+    stage('BUILD')    
     {
           steps{
-                 flake8 ("/app/site.py" , "/app/requiremnts.txt")
+                 docker build -t classweb:BUILD_NUMBER .
              }
     }
 
