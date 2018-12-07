@@ -7,5 +7,5 @@ RUN apt-get install python-pip
 RUN apt-get install python-dev
 COPY /app/site.py  /app/
 COPY /app/requirements.txt /app/
-pip install -r requirements.txt
+RUN pip install -r requirements.txt
 ENTRYPOINT ["python", "site.py"]
