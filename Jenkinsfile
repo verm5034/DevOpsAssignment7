@@ -6,7 +6,7 @@ pipeline {
     {
           steps{
                  docker build -t classweb:BUILD_NUMBER .
-             }
+            }
     }
 
   }
