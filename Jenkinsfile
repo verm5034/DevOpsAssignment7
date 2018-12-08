@@ -29,8 +29,8 @@ pipeline {
   post {
     always {
       echo "code which should always run goes here"
-          sh 'docker ps -fq name=classweb1'
-          sh 'docker container -fq rm name=classweb1'
+          sh 'docker ps -f -q name=classweb1'
+          sh 'docker container -f -q rm name=classweb1'
     }
   }
 }
