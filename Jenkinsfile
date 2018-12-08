@@ -30,8 +30,7 @@ pipeline {
     always {
       echo "code which should always run goes here"
           sh 'docker ps -q -f name=classweb1'
-          sh 'docker kill classweb1'
-          sh 'docker rm classweb1'
+          sh 'docker kill classweb1 && docker rm' 
     }
   }
 }
