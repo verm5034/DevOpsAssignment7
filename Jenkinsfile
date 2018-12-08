@@ -10,12 +10,7 @@ pipeline {
 
               }
         }
-    stage('BUILD')    
-    {
-          steps{
-                sh 'docker build -t classweb:$BUILD_NUMBER .'
-            }
-    }
+    
   }
 
   post {
