@@ -7,7 +7,7 @@ pipeline {
               steps {
                git credentialsId: 'id', url: 'https://github.com/verm5034/DevOpsAssignment7.git'     
                sh 'flake8 "/app/site.py" , "/app/requiremnts.txt"'
-
+               sh 'docker container rm classweb1'
               }
         }
       stage('Build')
