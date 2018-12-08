@@ -29,8 +29,8 @@ pipeline {
   post {
     always {
       echo "code which should always run goes here"
-          sh 'docker ps -q -f name=classweb1'
-          sh 'docker kill classweb1 && docker rm' 
+         sh 'docker ps -f name=classweb1 -q | xargs --no-run-if-empty docker stop'
+	                sh 'docker container ls -af name=classweb1 -q | xargs -r docker rm' 
     }
   }
 }
