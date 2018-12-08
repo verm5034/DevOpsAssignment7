@@ -8,4 +8,4 @@ RUN apt-get install python-dev -y
 COPY /app/site.py  /app/
 COPY /app/requirements.txt /app/
 RUN pip install -r /app/requirements.txt
-ENTRYPOINT ["python", "site.py"]
+ENTRYPOINT ["python", "/app/site.py"]
