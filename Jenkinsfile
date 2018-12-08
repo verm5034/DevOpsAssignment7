@@ -7,7 +7,7 @@ pipeline {
               steps {
                git credentialsId: 'id', url: 'https://github.com/verm5034/DevOpsAssignment7.git'     
                sh 'flake8 "/app/site.py" , "/app/requiremnts.txt"'
-               sh 'docker container rm classweb1'
+               
               }
         }
       stage('Build')
@@ -31,7 +31,7 @@ pipeline {
       echo "code which should always run goes here"
           sh 'docker ps -q -f name=classweb1'
           sh 'docker kill classweb1'
-          sh 'docker rm'
+          sh 'docker rm classweb1'
     }
   }
 }
