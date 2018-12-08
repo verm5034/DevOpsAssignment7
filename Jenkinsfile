@@ -30,7 +30,7 @@ pipeline {
     always {
       echo "code which should always run goes here"
          sh 'docker ps -f name=classweb1 -q | xargs --no-run-if-empty docker stop'
-	                sh 'docker container ls -af name=classweb1 -q | xargs -r docker rm' 
+	 sh 'docker container ls -af name=classweb1 -q | xargs -r docker rm' 
     }
   }
 }
