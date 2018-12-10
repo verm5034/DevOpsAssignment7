@@ -21,4 +21,11 @@ pipeline {
               }
         }
   }
+      post {
+    always {
+      echo "deleting existing dockers"
+          sh '[ \"\$(docker ps -q -f name=classweb1)\"] && docker kill classweb1 && docker rm classweb1'
+          
+    }
+  }
 }
