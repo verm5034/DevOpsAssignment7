@@ -6,6 +6,7 @@ pipeline {
               steps{
                     sh 'echo linting'
                     sh 'flake8 /app/*'
+                    sh 'docker container stop classweb1'
                     sh 'docker container rm classweb1'
               }
         }
