@@ -24,11 +24,9 @@ pipeline {
       post {
     always {
       echo "deleting existing dockers"
-           sh 'docker container stop classweb1'
-           sh 'docker container rm classweb1'
-          sh "[ \"\$(docker ps -q -f name=classweb1)\" ] && docker kill classweb1 && docker rm classweb1"
-          
-          
+       sh 'docker ps -f name=classweb1 -q | xargs --no-run-if-empty docker stop'
+	 sh 'docker container ls -af name=classweb1 -q | xargs -r docker rm'
+         
     }
   }
 }
