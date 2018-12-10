@@ -7,8 +7,11 @@ pipeline {
                     sh 'echo linting'
                     sh 'flake8 /app/*'
               }
-        
         }
-        
+        stage('Build'){
+              steps{
+                sh 'echo Building'
+              }
+        }
   }
 }
