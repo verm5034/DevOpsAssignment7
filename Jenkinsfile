@@ -11,6 +11,7 @@ pipeline {
         stage('Build'){
               steps{
                 sh 'echo Building'
+                sh 'docker build -t classweb:$BUILD_NUMBER .'
               }
         }
   }
